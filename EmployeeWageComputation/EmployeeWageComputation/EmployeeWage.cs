@@ -11,18 +11,20 @@ namespace EmployeeWageComputation
         {
             Random random = new Random();
             int empcheck = random.Next(0, 3);
-            if (empcheck == IS_FULL_TIME)
+            switch(empcheck)
             {
-                this.TotalEmpWage = FULL_WORKING_HRS * WAGE_PER_HR;
-                Console.WriteLine("Employee Present and Daily Wage is: " + TotalEmpWage );
-            }          
-            else if(empcheck == IS_PART_TIME)
-            {
-                this.TotalEmpWage = PARTTIME_WORKING_HRS * WAGE_PER_HR;
-                Console.WriteLine("Employee Present and Daily Wage is: " + TotalEmpWage);
+                case IS_FULL_TIME:
+                    this.TotalEmpWage = FULL_WORKING_HRS * WAGE_PER_HR;
+                    Console.WriteLine("Employee present Full Time & Daily Wage is:" + TotalEmpWage);
+                    break;
+                case IS_PART_TIME:
+                    this.TotalEmpWage = PARTTIME_WORKING_HRS * WAGE_PER_HR;
+                    Console.WriteLine("Employee present PART Time & Daily Wage is:" + TotalEmpWage);
+                    break;
+                default:
+                    Console.WriteLine("Employee is Absent");
+                    break;
             }
-            else
-            Console.WriteLine("Employee Absent");
         }        
     }
 }
