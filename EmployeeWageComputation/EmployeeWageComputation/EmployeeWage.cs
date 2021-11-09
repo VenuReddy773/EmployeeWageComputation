@@ -5,13 +5,18 @@ namespace EmployeeWageComputation
 {
     class EmployeeWage
     {
-        public const int IS_PRESENT = 1;
-        public void EmpAttendence()
+        public const int IS_PRESENT = 1,WAGE_PER_HR = 20, FULL_WORKING_HRS=8;
+        int TotalEmpWage;
+        public void DailyWage()
         {
             Random random = new Random();
             int empcheck = random.Next(0, 2);
             if (empcheck == IS_PRESENT)
-                Console.WriteLine("Employee Present");
+            {
+                this.TotalEmpWage = FULL_WORKING_HRS * WAGE_PER_HR;
+                Console.WriteLine("Employee Present and Daily Wage is: " + TotalEmpWage );
+            }
+                
             else
                 Console.WriteLine("Employee Absent");
         }        
