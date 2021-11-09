@@ -5,12 +5,12 @@ namespace EmployeeWageComputation
 {
     class EmployeeWage
     {
-        public const int IS_FULL_TIME = 1,IS_PART_TIME = 2, WAGE_PER_HR = 20, FULL_WORKING_HRS=8, PARTTIME_WORKING_HRS = 4,WORKING_DAYS = 20;
+        public const int IS_FULL_TIME = 1,IS_PART_TIME = 2, WAGE_PER_HR = 20, FULL_WORKING_HRS=8, PARTTIME_WORKING_HRS = 4,WORKING_DAYS = 20, MAX_WORKING_HRS = 100;
         int TotalEmpWage,Emphrs=0;
         public void MonthlyWage()
         {
             Random random = new Random();
-            for(int i=0;i<WORKING_DAYS;i++)
+            for(int i=0;i<WORKING_DAYS && Emphrs<= MAX_WORKING_HRS;i++)
             {
                 int empcheck = random.Next(0, 3);
                 switch (empcheck)
